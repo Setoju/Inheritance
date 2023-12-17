@@ -9,8 +9,10 @@ namespace Inheritance
 {
     internal class Rhomb : Figure
     {
-        protected int _horDiagLen;
-        protected int _vertDiagLen;
+        private int _horDiagLen;
+        private int _vertDiagLen;
+
+        private Graphics graphics = Form1.ActiveForm.CreateGraphics();
         public Rhomb(int centerX, int centerY, int horDiagLen, int vertDiagLen)
         {
             _centerX = centerX;
@@ -20,14 +22,12 @@ namespace Inheritance
         }
 
         public override void DrawBlack()
-        {            
-            Graphics graphics = Form1.ActiveForm.CreateGraphics();
+        {                        
             graphics.DrawPolygon(Pens.Black, CreateRhomb());
         }
 
         public override void HideDrawingBackGround()
-        {            
-            Graphics graphics = Form1.ActiveForm.CreateGraphics();
+        {                        
             graphics.DrawPolygon(new Pen(Form1.ActiveForm.BackColor), CreateRhomb());
         }
 

@@ -9,8 +9,9 @@ namespace Inheritance
 {
     internal class Square : Figure
     {        
-        protected int _sideLength;        
+        private int _sideLength;
 
+        private Graphics graphics = Form1.ActiveForm.CreateGraphics();
         public Square(int centerX, int centerY, int sideLength)
         {
             _centerX = centerX;
@@ -19,14 +20,12 @@ namespace Inheritance
         }
 
         public override void DrawBlack()
-        {            
-            Graphics graphics = Form1.ActiveForm.CreateGraphics();
+        {                        
             graphics.DrawRectangle(Pens.Black, CreateSquare());
         }
 
         public override void HideDrawingBackGround()
-        {
-            Graphics graphics = Form1.ActiveForm.CreateGraphics();
+        {            
             graphics.DrawRectangle(new Pen(Form1.ActiveForm.BackColor), CreateSquare());
         }
 
