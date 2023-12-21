@@ -14,12 +14,12 @@ namespace Inheritance
         public abstract void DrawBlack();
         public abstract void HideDrawingBackGround();
 
-        public void MoveRight()
+        public async Task MoveRight()
         {
             for (int i = 0; i < 50; i++)
             {
                 DrawBlack();
-                System.Threading.Thread.Sleep(100);
+                await Task.Delay(60);
                 HideDrawingBackGround();
                 _centerX++;
             }

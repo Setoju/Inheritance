@@ -11,8 +11,6 @@ namespace Inheritance
     {
         private int _horDiagLen;
         private int _vertDiagLen;
-
-        private Graphics graphics = Form1.ActiveForm.CreateGraphics();
         public Rhomb(int centerX, int centerY, int horDiagLen, int vertDiagLen)
         {
             _centerX = centerX;
@@ -22,13 +20,13 @@ namespace Inheritance
         }
 
         public override void DrawBlack()
-        {                        
-            graphics.DrawPolygon(Pens.Black, CreateRhomb());
+        {
+            Form1.ActiveForm.CreateGraphics().DrawPolygon(Pens.Black, CreateRhomb());
         }
 
         public override void HideDrawingBackGround()
-        {                        
-            graphics.DrawPolygon(new Pen(Form1.ActiveForm.BackColor), CreateRhomb());
+        {
+            Form1.ActiveForm.CreateGraphics().DrawPolygon(new Pen(Form1.ActiveForm.BackColor), CreateRhomb());
         }
 
         private Point[] CreateRhomb()

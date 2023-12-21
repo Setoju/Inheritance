@@ -11,7 +11,6 @@ namespace Inheritance
     {        
         private int _sideLength;
 
-        private Graphics graphics = Form1.ActiveForm.CreateGraphics();
         public Square(int centerX, int centerY, int sideLength)
         {
             _centerX = centerX;
@@ -21,12 +20,12 @@ namespace Inheritance
 
         public override void DrawBlack()
         {                        
-            graphics.DrawRectangle(Pens.Black, CreateSquare());
+            Form1.ActiveForm.CreateGraphics().DrawRectangle(Pens.Black, CreateSquare());
         }
 
         public override void HideDrawingBackGround()
-        {            
-            graphics.DrawRectangle(new Pen(Form1.ActiveForm.BackColor), CreateSquare());
+        {
+            Form1.ActiveForm.CreateGraphics().DrawRectangle(new Pen(Form1.ActiveForm.BackColor), CreateSquare());
         }
 
         private Rectangle CreateSquare()

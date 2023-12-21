@@ -10,8 +10,6 @@ namespace Inheritance
     internal class Circle : Figure
     {
         private int _radius;
-
-        private Graphics graphics = Form1.ActiveForm.CreateGraphics();
         public Circle(int centerX, int centerY, int radius)
         {
             _centerX = centerX;
@@ -20,13 +18,13 @@ namespace Inheritance
         }
 
         public override void DrawBlack()
-        {                        
-            graphics.DrawEllipse(Pens.Black, CreateCircle());
+        {
+            Form1.ActiveForm.CreateGraphics().DrawEllipse(Pens.Black, CreateCircle());
         }
 
         public override void HideDrawingBackGround()
-        {                        
-            graphics.DrawEllipse(new Pen(Form1.ActiveForm.BackColor), CreateCircle());
+        {
+            Form1.ActiveForm.CreateGraphics().DrawEllipse(new Pen(Form1.ActiveForm.BackColor), CreateCircle());
         }
         
         private Rectangle CreateCircle()
